@@ -1,0 +1,482 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 170123 */
+a,
+:focus {
+	text-decoration: none;
+	outline: 0;
+}
+.clear {
+	clear: both;
+	/*height: 1px;*/
+}
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	background-color: #999; 
+}
+header,
+nav,
+.content,
+.news,
+.quarter,
+footer
+{
+	margin: 0 auto;
+}
+/* header */
+header {
+	position: relative;
+	width: 1000px;
+	height: 60px;
+	background-color: #212d3b;
+}
+.header_l {
+	position: absolute;
+	top: 12px;
+	left: 20px;
+}
+.header_l a {
+	float: left;
+	position: relative;
+	width: 36px; 
+	height: 36px;
+}
+.header_l a div {
+	width: 26px; 
+	height: 26px;
+	margin: 5px;
+	background: url(../images/icon.png) 0 0 no-repeat;	
+}
+.header_l a:nth-child(2) div {
+	background-position: 0 -26px;
+}
+.header_l a:nth-child(3) div  {
+	background-position: 0 -52px;
+}
+.header_l a:nth-child(4) div  {
+	background-position: 0 -78px;
+}
+.header_l a:nth-child(5) div  {
+	background-position: 0 -104px;
+}
+.header_l a div:hover {
+	background: url(../images/_icon.png) 0 0 no-repeat;	
+	transition: all .4s;
+}
+.header_l a:nth-child(2):hover div {
+	background-position: 0 -26px;
+}
+.header_l a:nth-child(3):hover div {
+	background-position: 0 -52px;
+}
+.header_l a:nth-child(4):hover div {
+	background-position: 0 -78px;
+}
+.header_l a:nth-child(5):hover div {
+	background-position: 0 -104px;
+}
+.header_r {
+	position: absolute;
+	top: 18px;
+	right: 20px;
+}
+
+.header_r input[type=search] {
+	width: 210px;
+	height: 25px;
+	padding: 0 15px;
+	border: 0;
+	background-color: #2e3f51;
+	border-radius: 12px;
+	outline: 0;
+}
+.header_r input[type=search]:focus {
+	color: white;
+	border: 1px solid #4a6582 ;
+	transition: border .7s;
+}
+.search_button {
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	width: 18px;
+	height: 18px;
+	background: url(../images/search.png) 0 0 no-repeat;
+	cursor: pointer;
+}
+/* nav */
+nav {
+	position: relative;
+	width: 1000px;
+	height: 125px;
+	background-color: #fff;
+}
+.logo {
+	position: absolute;
+	top: 35px;
+	left: 20px;
+	width: 156px;
+	height: 51px;
+	background: url(../images/logo.png) 0 0 no-repeat;
+}
+nav ul {
+	position: absolute;
+	float: right;
+	top: 60px;
+	right: 0;
+	width: 600px;
+}
+nav li {
+	display: inline;
+	width: 80px;
+	padding: 5px;
+	color: #969696;
+	font-family: 'Bitter', serif;
+	cursor: pointer;
+}
+nav li.active {
+	font-weight: bold;
+	color: #212d3b;
+}
+nav li:hover {
+	color: #2e3f51;
+	transition: all .4s;
+}
+/* carousel */
+.content {
+	width: 1000px;
+	height: 654px;
+}
+.content_top {
+	width: 100%;
+	height: 530px;
+	background-color: #2e3f51;
+}
+.content_top .carousel_content {
+	float: left;
+	width: 960px;
+	height: 450px;
+	padding: 40px 20px;
+}
+.content_top .carousel_item {
+	display: inline;
+	width: 960px;
+	height: 100%;
+	outline: 0;
+}
+.carousel_item_l {
+	float: left;
+	width: 300px;
+	height: 450px;
+	background-color: #2f3943;
+}
+.carousel_item_l>div {
+	width: 252px;
+	height: 316px;
+	margin: 110px 0 0 24px;
+	color: #fff;
+	font-family: 'Playfair Display', serif;
+}
+.carousel_item_r {
+	float: left;
+	width: 660px;
+	height: 450px;
+}
+.carousel_item_r img {
+	width: 100%;
+}
+.item_title {
+	font-size: 24px;
+	outline: 0;
+}
+.item_c {
+	margin-top: 20px;
+	word-wrap: break-word;
+	font: 15px/24px 'Playfair Display', serif;
+}
+.readmore {
+	position: absolute;
+	right: 0;
+	bottom: 0;	
+	cursor: pointer;
+}
+.content_down {
+	width: 100%;
+	height: 124px;
+	background: #fff;
+}
+.content_down 
+.single-item>div {
+	position: relative;
+	width: 720px;
+	padding: 30px 0;
+	margin: 0 140px;
+	text-align: center;
+	font: italic 20px/30px 'Playfair Display', serif;
+	color: #6e6e6e;
+}
+/* news */
+.news a {
+	color: #837f7c;
+	text-decoration: none;
+}
+.news {
+	width: 100%;
+	width: 990px;
+	border-top: 1px solid #d4d4d4;
+	padding: 50px 5px;
+	background: #fff;
+}
+.news_l {
+	float: left;
+	width: 660px;
+}
+.news_content {
+	position: relative;
+	float: left;
+	width: 300px;
+	margin: 0 15px;
+	font: 12px/18px 'Bitter', serif;
+}
+.news_content span {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 15px;
+	color: #252525;
+}
+.news_l .news_content a {
+	display: block;
+	margin-top: 20px;
+}
+.news_img {
+	width: 290px;
+	height: 180px;
+	padding: 4px;
+	border: 1px solid #c6c6c6;
+	box-shadow: 0 10px 20px -10px #c6c6c6;
+}
+.news_img>div {
+	width: 100%;
+	height: 100%;
+	background: url(../images/cake/001.jpg) no-repeat 50% 50%/cover;
+}
+.news_r {
+	float: left;
+	width: 300px;
+}
+.news_r .news_content {
+	width: 100%;
+	margin-bottom: 50px;
+}
+.news_r .news_img {
+	float: left;
+	width: 48px;
+	height: 48px;
+	padding: 4px 15px 0 0;
+	border: 0;
+	box-shadow: none;
+}
+.news_r .news_img div {
+	width: 100%;
+	height: 100%;
+	background: url(../images/cake/004-95.jpg) no-repeat 50% 50%/cover;
+}
+.cr {
+	position: absolute;
+	left: 0;
+	width: 115px;
+	margin-top: 15px;
+	color: #323e4e;
+	font-weight: bold;
+}
+.news_r .cr {
+	left: auto;
+	right: 0;
+	margin-top: 10px;
+}
+.news_content .cr img {
+	width: 6px;
+	height: 5px;
+	padding: 2px 0 0 5px;
+}
+.news::after,
+.news_l::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+/* quarter */
+.quarter {
+	width: 960px;
+	padding: 30px 20px 10px;
+	background-color: #eee;
+}
+.quarter_l {
+	float: left;
+	width: 480px;
+}
+.quarter_l a {
+	color: #837f7c;
+	text-decoration: none;
+}
+.quarter_title {
+	margin-bottom: 25px;
+	color: #464646;
+	font: 15px 'Bitter', serif;
+}
+/* quarter_content */
+.quarter_l .quarter_content {
+	float: left;
+	width: 445px;
+	margin-bottom: 30px;
+	font: 12px/18px 'Bitter', serif;
+}
+.quarter_l .quarter_content p {
+	margin-top: 10px;
+}
+.quarter_content span {
+	display: block;
+	font-size: 15px;
+	color: #252525;
+	margin-top: 12px;
+}
+.quarter_img {
+	float: left;
+	width: 95px;
+	height: 95px;
+	padding: 4px;
+	margin-right: 20px;
+	border: 1px solid #8f8f8f;
+	box-shadow: none; 
+}
+.quarter_img div {
+	width: 100%;
+	height: 100%;
+	background: url(../images/cake/007-95.jpg) no-repeat 50% 50%/cover;
+}
+.quarter_r {
+	float: left;
+	width: 480px;
+}
+.quarter_r a {
+	color: #313d49;
+}
+.quarter_r .quarter_content {
+	float: left;
+	width: 210px;
+	color: #837f7c;
+	font: 12px/18px 'Bitter', serif;
+}
+.quarter_r .quarter_content>div {
+	margin-bottom: 25px;
+}
+.quarter_album {
+	float: left;
+	width: 240px;
+	margin-left: 30px;
+}
+.quarter_album .quarter_title {
+	margin: 0 0 17px 7.5px;
+}
+.quarter_album_img {
+	float: left;
+	width: 65px;
+	height: 65px;
+	margin: 7.5px;
+	background: url(../images/cake/004-95.jpg) no-repeat 50% 50%/cover;
+}
+.quarter_album_img:nth-child(4),
+.quarter_album_img:nth-child(8) {
+	background-image: url(../images/cake/004-95.jpg);
+}
+.quarter_album_img:nth-child(2),
+.quarter_album_img:nth-child(6),
+.quarter_album_img:nth-child(9) {
+	background-image: url(../images/cake/001-95.jpg);
+}
+.quarter_album_img:nth-child(3),
+.quarter_album_img:nth-child(5),
+.quarter_album_img:nth-child(7) {
+	background-image: url(../images/cake/007-95.jpg);
+}
+.news_content::after,
+.quarter_content::after,
+.quarter::after,
+.quarter_r::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+/* footer */
+footer {
+	width: 960px;
+	height: 60px;
+	padding: 0 20px;
+	background-color: #eee;
+	color: #837f7c;
+	font: 14px/60px 'Bitter', serif;
+}
+footer>div {
+	border-top: 2px solid  #dfdfdf;
+}
+footer a {
+	color: #2e3f51;
+	transition: all .4s;
+}
+footer a:hover {
+	color: #a4cdd1;
+}
+.footer_l {
+	float: left;
+} 
+.footer_r {
+	float: right;
+} 

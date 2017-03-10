@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* config */
+/*	font
+	標題font-family: 'Pontano Sans', sans-serif;
+	內文font-family: 'Quicksand', sans-serif;
+*/
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	font: bold 18px/22px 'Quicksand', sans-serif;
+	color: #8b8788;
+}
+a,
+a:hover {
+	text-decoration: none;
+}
+.title {
+	font-size: 52px;
+}
+/* nav */
+nav {
+	display: none;
+	position: fixed;
+	top: 30px;
+	left: 97%;
+	transform: rotate(90deg);
+	transform-origin: 0 0;
+	z-index: 8;
+}
+nav a {
+	display: inline-block;
+	margin: 10px 0;
+	padding: 5px 10px;
+	border-left: 3px solid #8bc7d1;
+	overflow: hidden;
+	text-align: left;
+	color: #8bc7d1;
+	font-size: 24px;
+	letter-spacing: 3px;
+	transition: color .3s, border-color .6s;
+}
+nav a:hover {
+	border-left: 3px solid #8b8788;
+	color: #8b8788;
+}
+nav a span {
+	opacity: 0;
+	transition: opacity .6s;
+}
+nav a:hover>span {
+	opacity: 1;
+}
+/* door */
+.door {
+	position: relative;
+	width: 100%;
+	min-height: 974px;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+}
+.door .title {
+	position: absolute;
+	letter-spacing: 5px;
+	outline: 1px solid red;
+}
+.wave {
+	position: absolute;
+	bottom: 25%;
+	left: 50%;
+	margin-top: -1500px;
+	margin-left: -1500px;
+	width: 3000px;
+	height: 3000px;
+	border-radius: 43%;
+	background-image: linear-gradient(240deg, #fddb92 0%, #d1fdff 100%);
+	transform-origin: 50% 48%;
+	opacity: .6;
+	animation: drift 15s infinite linear;
+}
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.wave.mid {
+	opacity: .4;
+	background: #fefefe;
+	animation: drift 16s infinite linear;
+}
+.wave.bot {
+	opacity: .3;
+	background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);	
+	animation: drift 17s infinite linear;
+}
+.arrow_down {
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	font-size: 50px;
+	color: #dcdcdc;
+	cursor: pointer;
+	animation: jump 1s alternate infinite;
+}
+@keyframes jump {
+  from { bottom: 0px; }
+  to { bottom: 10px; }
+}
+/* footer */
+footer {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+footer h1 {
+	padding: 5px;
+	line-height: 24px;
+	text-align: center;
+}

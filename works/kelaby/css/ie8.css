@@ -1,0 +1,59 @@
+.content.b {
+	padding: 50px 1%;
+}
+.header_top {
+	background-color: rgb(34, 34, 34);
+}
+nav {
+	height: 52px;
+	background-color: rgb(246, 246, 246);
+}
+.main_1 {
+	background: url(../images/background01.jpeg) no-repeat 40% 50%;
+}
+.main_2 {
+	height: 700px;
+}
+.main_3 {
+	height: 400px;
+	background: url(../images/background-02.jpg) repeat-x 50% 50%;
+}
+.main_3 .item {
+	margin-top: 10px;
+}
+.main_4 {
+	height: 450px;
+}
+.mask {
+	background-color: #000;
+}
+.mask,
+.mask span {
+	filter: alpha(opacity=0);
+}
+.mask:hover {
+	filter: alpha(opacity=50);
+}
+.mask:hover span {
+	filter: alpha(opacity=100);
+}
+.main_5 {
+	height: 408px;
+	background: url(../images/background-03.jpg) repeat-x 50% 50%;
+}
+.main_6 {
+	height: 500px;
+}
+.main_6 .item {
+	margin-top: 50px;
+}
+.main_6 .photo {
+	height: 220px;
+}
+.main_7 {
+	height: 200px;
+	background: url(../images/background-04.jpg) repeat-x 0 0;
+}
+.main_8 {
+	height: 400px;
+}
