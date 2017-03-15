@@ -1,4 +1,4 @@
-$(function (){
+$(function() {
 	function detectWindow() {
 		var ww = $('.wrapper').width(),
 			wh = $(window).height(),
@@ -27,6 +27,9 @@ $(function (){
 	$(window).resize(function(){
 		detectWindow();
 		photoRWD();
+	});
+	$('.skills canvas').each(function() {
+		$(this).skills($(this).attr('data-name'), $(this).attr('data-number'));
 	});
 });
 $.fn.skills = function(name, number, settings) {
@@ -79,9 +82,3 @@ $.fn.skills = function(name, number, settings) {
 	}
 	timer = setInterval(startDraw, 33);
 };
-$(function() {
-	$('.skills>canvas').each(function() {
-		$(this).skills($(this).attr('data-name'), $(this).attr('data-number'));
-	});
-});
-
