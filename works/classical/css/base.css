@@ -91,8 +91,7 @@ header {
 	width: 26px; 
 	height: 26px;
 	margin: 5px;
-	background: url(../images/icon.png) no-repeat 0 0;	
-	transition: all .4s;
+	background: url(../images/icon.png) no-repeat 0 0;
 }
 .header_l a:nth-child(2) div {
 	background-position: 0 -26px;
@@ -106,20 +105,20 @@ header {
 .header_l a:nth-child(5) div {
 	background-position: 0 -104px;
 }
-.header_l a div:hover {
-	background: url(../images/_icon.png) no-repeat 0 0;
+.header_l a:first-child:hover div {
+	background-position: -26px 0px;
 }
 .header_l a:nth-child(2):hover div {
-	background-position: 0 -26px;
+	background-position: -26px -26px;
 }
 .header_l a:nth-child(3):hover div {
-	background-position: 0 -52px;
+	background-position: -26px -52px;
 }
 .header_l a:nth-child(4):hover div {
-	background-position: 0 -78px;
+	background-position: -26px -78px;
 }
 .header_l a:nth-child(5):hover div {
-	background-position: 0 -104px;
+	background-position: -26px -104px;
 }
 .header_r {
 	position: absolute;
