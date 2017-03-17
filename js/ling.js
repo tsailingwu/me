@@ -1,24 +1,52 @@
 // $(document).ready(function(){
 //    $('.scrollbar-macosx').scrollbar();
 // });
+function anchor(i) {
+	$('html, body').animate({
+		scrollTop: $(i).offset().top
+	}, 600);
+};
 $(function() {
 	function detectWindow() {
 		var ww = $('.wrapper').width(),
 			wh = $(window).height(),
 			ratio = ww / wh;
-			
-		// console.log(ww);
-
 		$('.index .title').css('top', (wh - $('.index .title').height()) / 2);
 		$('.index').height(wh);
 		$('.wave').width(ww * 1.5).height(ww * 1.5);
+		if (ww < 650) {
+			var	t1 = (ww / 650 * 28 > 22) ? (ww / 650 * 28) : 22;
+			$('.c_title').css({
+				'font': t1 + 'px'
+			});
+			if (ww > 430) {			
+				$('.c_title h2:last-child a').css(
+					'width', $('.c_title h2').width() - 155 + 'px'
+				);
+			} else {
+				$('.c_title h2:last-child a').removeAttr('style');
+			}
+		} else {
+			$('.c_title').css({
+				'font': 28 + 'px',
+				'line-height': 34 + 'px'
+			});
+			$('.c_title h2:last-child a').removeAttr('style');
+		};
 	}
-	var mn = 0;
+	function photoRWD() {
+		$('.photo').each(function(){
+			$(this).height($(this).width() * 0.51);
+		});
+	};
+	detectWindow();
+	photoRWD();
+	var mn = true;
 	$('.m_menu').click(function() {
 		$('.m_menu>div').toggleClass('active');
 		$('.menufilter').toggle();
-		mn++;
-		if (mn % 2 == 0) {
+		mn = !mn;
+		if (mn) {
 			$('nav').slideUp(400, function() {
 				$(this).removeAttr('style')
 			});
@@ -26,59 +54,44 @@ $(function() {
 			$('nav').slideDown();
 		};
 	});
-
 	$('.menufilter').click(function() {
 		$('.m_menu').click();
 	});
-
 	$('.arrow_down').click(function() {
 		$('html, body').animate({
 			scrollTop: $(window).height()
 		}, 800);
 	});
-
-	function anchor(i) {
-		$('html, body').animate({
-			scrollTop: $(i).offset().top - 50
-		}, 600);
-	};
-	// 划下index時出現nav
-
-	function photoRWD() {
-		$('.photo').each(function(){
-			$(this).height($(this).width() * 0.51);
-		});
-	};
-
-	$(window).resize(function(){
+	$(window).resize(function() {
 		detectWindow();
 		photoRWD();
 	});
-
-	detectWindow();
-	photoRWD();
-
-	// var as = true;
-	// $(window).scroll(function() {
-	// 	if (as && $(window).scrollTop() >= $('.skill').offset().top) {
-	// 		as = false;
-	// 		var $this = this,
-	// 			$next = $this.find('.skill'),
-	// 			timer = setInterval(function() {
-	// 				$next.click();
-	// 			}, skill());
-	// 		$this.hover(function() {
-	// 			clearInterval(timer);
-	// 		}, function() {
-	// 			timer = setInterval(function() {
-	// 				$next.click();
-	// 			}, skill());
-	// 		});
-	// 	};
-	// });
-
-	$('.skills canvas').each(function() {
-		$(this).skills($(this).attr('data-name'), $(this).attr('data-number'));
+	function windowVisible(o) {
+		var windowTop = $(window).scrollTop(),
+			windowBottom = windowTop + $(window).height(),
+			targetTop = $(o).offset().top,
+			targetBottom = targetTop + $(o).height();
+		if (windowBottom <= targetTop || windowTop >= targetBottom) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	$(window).scroll(function() {
+		if (windowVisible('.skill')) {
+			if (!$('.skill').hasClass('active')) {
+				$('.skill').addClass('active');
+				$('.skills canvas').each(function() {
+					$(this).skills($(this).attr('data-name'), $(this).attr('data-number'));
+				});
+			}
+		} else {
+			$('.skill').removeClass('active');
+			$('.skills canvas').each(function() {
+				$(this).clone().appendTo($(this).parent());
+				$(this).remove();
+			});
+		}
 	});
 });
 $.fn.skills = function(name, number, settings) {

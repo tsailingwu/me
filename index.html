@@ -4,142 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ling's</title>
+<link href="icon.png" rel="icon">
 <link rel="stylesheet" href="css/ling.css">
 <link rel="stylesheet" href="css/mfglabs_iconset.css">
-<!-- <link rel="stylesheet" href="css/macos.css"> -->
 <script src="js/jquery-3.1.1.min.js"></script>
-<!-- <script src="js/jquery.scrollbar.min.js"></script> -->
 <script src="js/ling.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
-	<!-- <div class="scrollbar-macosx"> -->
-		<div class="menufilter"></div>
-		<div class="m_menu">
-			<div class="m1"></div>
-			<div class="m2"></div>
-			<div class="m3"></div>
+	<div class="menufilter"></div>
+	<div class="m_menu">
+		<div class="m1"></div>
+		<div class="m2"></div>
+		<div class="m3"></div>
+	</div>
+	<nav>
+		<a onclick="anchor('.index')">H<span>ome</span></a>
+		<a onclick="anchor('.skill')">S<span>kills</span></a>
+		<a onclick="anchor('.work')">W<span>orks</span></a>
+		<a onclick="anchor('.contact')">C<span>ontact</span></a>
+	</nav>
+	<div class="index">
+		<div class="title">
+			<h1>ling's</h1>
 		</div>
-		<nav>
-			<a onclick="anchor('.index')">H<span>ome</span></a>
-			<a onclick="anchor('.skill')">S<span>kills</span></a>
-			<a onclick="anchor('.work')">W<span>orks</span></a>
-			<a onclick="anchor('.contact')">C<span>ontact</span></a>
-		</nav>
-		<div class="index">
-			<div class="title">
-				<p>
-					<h1>ling's</h1>
-				</p>
-			</div>
-			<div class="wave top"></div>
-			<div class="wave mid"></div>
-			<div class="wave bot"></div>
-			<div class="arrow_down"><i class="icon-chevron_down"></i></div>
+		<div class="wave top"></div>
+		<div class="wave mid"></div>
+		<div class="wave bot"></div>
+		<div class="arrow_down"><i class="icon-chevron_down"></i></div>
+	</div>
+	<div class="skill">
+		<div class="content_title">
+			<h1>SKILLS</h1>
 		</div>
-		<div class="skill">
-			<div class="content_title">
-				<p>
-					<h1>SKILLS</h1>
-				</p>
+		<div class="content">
+			<div class="skills">
+				<div>
+					<canvas data-name="HTML5" data-number="95"></canvas>
+				</div>
+				<div>
+					<canvas data-name="CSS3" data-number="95"></canvas>
+				</div>
+				<div>
+					<canvas data-name="jQuery" data-number="60"></canvas>
+				</div>
+				<div>
+					<canvas data-name="UX" data-number="50"></canvas>
+				</div>
+				<div>
+					<canvas data-name="UI" data-number="10"></canvas>
+				</div>
+				<div>
+					<canvas data-name="Canvas" data-number="10"></canvas>
+				</div>
 			</div>
-			<div class="content">
-				<div class="skills">
-					<div class="carousel">
-						<div class="carousel_wrap">
-							<div class="carousel_scroll">
-								<div class="carousel_item">
-									<div>
-										<canvas data-name="HTML5" data-number="95"></canvas>
-									</div>
-									<div>
-										<canvas data-name="CSS3" data-number="95"></canvas>
-									</div>
-									<div>
-										<canvas data-name="jQuery" data-number="60"></canvas>
-									</div>
-									<div>
-										<canvas data-name="UX" data-number="50"></canvas>
-									</div>
-									<div>
-										<canvas data-name="UI" data-number="10"></canvas>
-									</div>
-									<div>
-										<canvas data-name="Canvas" data-number="10"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<ul class="position"></ul>
-						<div class="position_prev"><i class="icon-chevron_left"></i></div>
-						<div class="position_next"><i class="icon-chevron_right"></i></div>
+		</div>
+	</div>
+	<div class="work">
+		<div class="content_title">
+			<h1>WORKS</h1>
+		</div>
+		<div class="content">
+			<div class="item">
+				<a href="https://tsailingwu.github.io/me/works/kelaby" target="_blank" class="item_content">
+					<div class="photo"></div>
+					<div class="w_title">
+						<h2>RWD Website 1</h2>
 					</div>
-				</div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://tsailingwu.github.io/me/works/Gomag" target="_blank" class="item_content">
+					<div class="photo"></div>
+					<div class="w_title">
+						<h2>RWD Website 2</h2>
+					</div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://tsailingwu.github.io/me/works/classical" target="_blank" class="item_content">
+					<div class="photo"></div>
+					<div class="w_title">
+						<h2>Website 3</h2>
+					</div>
+				</a>
 			</div>
 		</div>
-		<div class="work">
-			<div class="content_title">
-				<p>
-					<h1>WORKS</h1>
-				</p>
-			</div>
-			<div class="content">
-				<div class="item">
-					<a href="https://tsailingwu.github.io/me/works/kelaby" target="_blank" class="item_content">
-						<div class="photo"></div>
-						<div class="w_title">
-							<p>
-								<h2>RWD Website 1</h2>
-							</p>
-						</div>
-					</a>
-				</div>
-				<div class="item">
-					<a href="https://tsailingwu.github.io/me/works/Gomag" target="_blank" class="item_content">
-						<div class="photo"></div>
-						<div class="w_title">
-							<p>
-								<h2>RWD Website 2</h2>
-							</p>
-						</div>
-					</a>
-				</div>
-				<div class="item">
-					<a href="https://tsailingwu.github.io/me/works/classical" target="_blank" class="item_content">
-						<div class="photo"></div>
-						<div class="w_title">
-							<p>
-								<h2>Website 3</h2>
-							</p>
-						</div>
-					</a>
-				</div>
+	</div>
+	<div class="contact">
+		<div class="content_title">
+			<h1>CONTACT ling</h1>
+		</div>
+		<div class="content">
+			<div class="c_title">
+				<h2><i class="icon-user_female"></i><span>中文名</span>：<span>吳采苓</span></h2>
+				<h2><i class="icon-smartphone"></i>Phone：<a href="tel:0909818748">0909-818-748</a></h2>
+				<h2><i class="icon-mail"></i><small>Email：</small><a href="mailto:5005tsailing@gmail.com">5005tsailing@gmail.com</a></h2>
 			</div>
 		</div>
-		<div class="contact">
-			<div class="content_title">
-				<p>
-					<h1>CONTACT ling</h1>
-				</p>
-			</div>
-			<div class="content">
-				<div class="c_title">
-					<h2><i class="icon-user_female"></i><span>中文名</span>：<span>吳采苓</span></h2>
-					<h2><i class="icon-smartphone"></i>Phone：<a href="tel:0909818748">0909-818-748</a></h2>
-					<h2><i class="icon-mail"></i>Email：<a href="mailto:5005tsailing@gmail.com">5005tsailing@gmail.com</a></h2>
-				</div>
-			</div>
+	</div>
+	<footer>
+		<div class="content">
+			<h1>Copyright © 2017 Designed by <a href="mailto:5005tsailing@gmail.com">Ling</a></h1>
 		</div>
-		<footer>
-			<div class="content">
-				<p>
-					<h1>Copyright © 2017 Designed by <a href="mailto:5005tsailing@gmail.com">Ling</a></h1>
-				</p>
-			</div>
-		</footer>
-	<!-- </div> -->
+	</footer>
 </div>
 </body>
 </html>
