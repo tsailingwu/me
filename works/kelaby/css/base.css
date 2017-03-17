@@ -757,6 +757,13 @@ footer {
 .fr {
 	float: right;
 }
+footer a {
+	color: #1c7aa8;
+	transition: color .3s;
+}
+footer a:hover {
+	color: #a4cdd1;
+}
 @media screen and (max-width: 1015px) {
 	.main_6 .content {
 		text-align: center;

@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -158,8 +158,12 @@ nav a:hover>span {
 	animation: indexnav 6s alternate infinite linear;
 }
 @keyframes indexnav {
-  from { background-color: #e4d650; }
-  to { background-color: #8cc3cd; }
+	from {
+		background-color: #e4d650;
+  }
+	to {
+		background-color: #8cc3cd;
+  }
 }
 .m2 {
 	top: 10px;
@@ -198,8 +202,12 @@ nav a:hover>span {
 	z-index: 1;
 }
 @keyframes indexfont {
-  from { color: #8cc3cd; }
-  to { color: #e4d650; }
+	from {
+		color: #8cc3cd;
+	}
+	to {
+		color: #e4d650;
+	}
 }
 .wave {
 	position: absolute;
@@ -239,12 +247,12 @@ nav a:hover>span {
 	}
 }
 @keyframes drift {
-  from { 
-  		transform: rotate(0deg); 
-  }
-  to { 
-  		transform: rotate(360deg); 
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 .arrow_down {
 	position: absolute;
@@ -258,8 +266,12 @@ nav a:hover>span {
 	animation: jump 1s alternate infinite, indexfont 6s alternate infinite linear;
 }
 @keyframes jump {
-  from { bottom: 5px; }
-  to { bottom: 15px; }
+	from {
+		bottom: 5px;
+	}
+	to {
+		bottom: 15px;
+	}
 }
 /* skill */
 .skill {
@@ -319,7 +331,7 @@ nav a:hover>span {
 	text-align: center;
 }
 .c_title h2 {
-	margin: 3px 0; 
+	margin: 3px 0;
 }
 .c_title span {
 	font-family: 'cwTeXYen', sans-serif;
