@@ -209,24 +209,42 @@ nav a:hover>span {
 	width: 150%;
 	height: 300%;
 	border-radius: 43%;
-	background-image: linear-gradient(240deg, #fddb92, #d1fdff);
 	transform-origin: 50% 48%;
+}
+.wave.top {
+	background: #fddb92;
+	background: -ms-linear-gradient(240deg, #fddb92, #d1fdff); /*IE 10*/
 	opacity: .6;
 	animation: drift 15s infinite linear;
 }
-@keyframes drift {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	:root .wave.top {
+		background: linear-gradient(240deg, #fddb92, #d1fdff);/* chrome / safari / opera */
+	}
 }
 .wave.mid {
-	opacity: .4;
 	background: #fefefe;
 	animation: drift 16s infinite linear;
+	opacity: .4;
 }
 .wave.bot {
+	background: #d1fdff;
+	background: -ms-linear-gradient(#fbc2eb, #a6c1ee); /*IE 10*/
 	opacity: .3;
-	background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);	
 	animation: drift 17s infinite linear;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	:root .wave.bot {
+		background: linear-gradient(#fbc2eb, #a6c1ee);/* chrome / safari / opera */
+	}
+}
+@keyframes drift {
+  from { 
+  		transform: rotate(0deg); 
+  }
+  to { 
+  		transform: rotate(360deg); 
+  }
 }
 .arrow_down {
 	position: absolute;
