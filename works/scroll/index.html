@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScrollEffect</title>
+</head>
+<body>
+	<div class="sun"><img src="sun.png"></div>
+	<div class="m2"><img src="m2.png"></div>
+	<div class="m1"><img src="m1.png"></div>
+	<div class="cloud1"><img src="cloud1.png"></div>
+	<div class="cloud2"><img src="cloud2.png"></div>
+	<div class="ch"><img src="1.jpg"></div>
+	<div class="ch"><img src="1.jpg"></div>
+	<div class="ch"><img src="1.jpg"></div>
+<style>
+	body {
+		height: 5000px;
+	}
+	body>div {
+		position: fixed;
+	}
+	.m1 {
+		top: 50px;
+	}
+	.m2,
+	.cloud1 {
+		top: 20px;
+	}
+	.cloud2 {
+		z-index: -1;
+	}
+	.ch {
+		top: 120px;
+	}
+	.ch:nth-child(6).active {
+		animation: ch .8s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ch {
+		from {top: 120px;}
+		to {top: 0;}
+	}
+	.ch:nth-child(7),
+	.ch:nth-child(8) {
+		top: 150px;
+	}
+	.ch:nth-child(8) {
+		transform: rotateY(180deg);
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+	function readyPosition() {
+		var v = $(window).scrollTop() * ($(window).width() - $('.ch').width() - 100) / ($('body').height() - $(window).height()) + 100,
+			v2 = Math.abs($(window).scrollTop() * 200 / ($('body').height() - $(window).height()) - 100);
+			// v3 = Math.abs($(window).scrollTop() * ($(window).width() - $('.ch').width()) / ($('body').height() - $(window).height() + 8000) - 300);
+		// if (v3 > 100) {v3 = 100}
+		// if ($(window).width() - (v / 10 + 400) > v && $(window).width() - (v / 10 + 400) - 300 < v + 100)
+		if ($(window).width() - (v / 10 + 400) > v && $(window).width() - (v / 10 + 800) < v) {
+			$('.ch:nth-child(6)').addClass('active');
+		} else {
+			$('.ch:nth-child(6)').removeClass('active');
+		}
+		$('.sun').css('left', v / 10 + 500);
+		$('.m1').css('right', v / 20);
+		$('.m2').css('right', v / 10 + 400);
+		$('.cloud1').css('right', v / 15 + 300);
+		$('.cloud2').css('right', v / 10 + 1000);
+		$('.ch:nth-child(7)').css('left', v / 3);
+		$('.ch:nth-child(8)').css({
+			'right': v / 5,
+			'top': v2
+		});
+		$('.ch:nth-child(6)').css({
+			'left': v
+		});
+	};
+	$(document).ready(function() {
+		readyPosition();
+	});
+	$(window).scroll(function() {
+		readyPosition();
+	});
+	// console.log()
+</script>
+</body>
+</html>

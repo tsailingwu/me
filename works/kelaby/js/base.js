@@ -43,9 +43,9 @@ $(function() {
 		$(this).toggleClass('active');
 		$('.menufilter').toggle();
 		if ($(this).hasClass('active')) {
-			$('nav').animate().slideDown();
+			$('nav').stop().slideDown();
 		} else {
-			$('nav').animate().slideUp(400, function() {
+			$('nav').stop().slideUp(400, function() {
 				$(this).removeAttr('style')
 			});
 		};

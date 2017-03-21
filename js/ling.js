@@ -9,8 +9,7 @@ function anchor(i) {
 $(function() {
 	function detectWindow() {
 		var ww = $('.wrapper').width(),
-			wh = $(window).height(),
-			ratio = ww / wh;
+			wh = $(window).height();
 		$('.index .title').css('top', (wh - $('.index .title').height()) / 2);
 		$('.index').height(wh);
 		$('.wave').width(ww * 1.5).height(ww * 1.5);
@@ -86,11 +85,13 @@ $(function() {
 				});
 			}
 		} else {
-			$('.skill').removeClass('active');
-			$('.skills canvas').each(function() {
-				$(this).clone().appendTo($(this).parent());
-				$(this).remove();
-			});
+			if ($('.skill').hasClass('active')) {
+				$('.skill').removeClass('active');
+				$('.skills canvas').each(function() {
+					$(this).clone().appendTo($(this).parent());
+					$(this).remove();
+				});
+			}
 		}
 	});
 });

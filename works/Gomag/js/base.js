@@ -1,7 +1,6 @@
 function detectWindow() {
 	var ww = $('.wrapper').width(),
-		wh = $(window).height(),
-		ratio = ww / wh;
+		wh = $(window).height();
 
 	if (ww > 800) {
 		$('.menu a').removeClass('active');

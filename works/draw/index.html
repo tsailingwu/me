@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw</title>
+<style>
+	body {
+		background-color: #dcdcdc;
+	}
+	.color {
+		position: absolute;
+		top: -50px;
+		left: 30%;
+		z-index: 3;
+	}
+	.color>div {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+	}
+	.red {
+		background-color: red;
+	}
+	.orange {
+		background-color: orange;
+	}
+	.yellow {
+		background-color: yellow;
+	}
+	.green {
+		background-color: green;
+	}
+	.blue {
+		background-color: blue;
+	}
+	.indigo {
+		background-color: indigo;
+	}
+	.purple {
+		background-color: purple;
+	}
+	.brushsize {
+		position: absolute;
+		top: -50px;
+		left: 60%;
+		width: 100px;
+		height: 24px;
+		background-color: #fefefe;
+		z-index: 3;
+	}
+	.brushsize::before {
+		content: '';
+		position: absolute;
+		top: 11px;
+		left: 0;
+		width: 70%;
+		height: 1px;
+		margin: 0 25% 0 5%;
+		background-color: #222;
+	}
+	.brushsize.medium::before {
+		top: 10px;
+		height: 3px;
+	}
+	.brushsize.big::before {
+		top: 9px;
+		height: 5px;
+	}
+	.triangle {
+		position: relative;
+		top: 7px;
+		left: 80px;
+		width: 0;
+		height: 0;
+		border: 8px solid #222;
+		border-color: Turquoise #fefefe #fefefe #fefefe;
+	}
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 24px;
+		width: 100%;
+		height: 72px;
+		text-align: center;
+		background-color: #fefefe;
+	}
+	.submenu.active {
+		display: block;
+	}
+	.submenu>div {
+		position: relative;
+		height: 24px;
+	}
+	.submenu>div:hover {
+		background-color: Turquoise;
+	}
+	.submenu>div::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 90%;
+		margin: 0 5%;
+		background-color: #222;
+	}
+	.small::before {
+		top: 11px;
+		height: 1px;
+	}
+	.medium::before {
+		top: 10px;
+		height: 3px;
+	}
+	.big::before {
+		top: 9px;
+		height: 5px;
+	}
+	.menufilter {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+	.box {
+		position: absolute;
+		top: 15%;
+		left: 15%;
+		width: 70%;
+		height: 70%;
+		border: 5px solid Turquoise;
+		background-color: #fefefe;
+	}
+</style>
+</head>
+<body>
+<div class="menufilter"></div>
+<div class="box">
+	<div class="brushsize">
+		<div class="triangle"></div>
+		<div class="submenu">
+			<div class="small" data="1"></div>
+			<div class="medium" data="3"></div>
+			<div class="big" data="5"></div>
+		</div>
+	</div>
+	<div class="color">
+		<div class="red"></div>
+		<div class="orange"></div>
+		<div class="yellow"></div>
+		<div class="green"></div>
+		<div class="blue"></div>
+		<div class="indigo"></div>
+		<div class="purple"></div>
+	</div>
+	<canvas></canvas>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+$(function() {
+	var c = $('.box canvas')[0],
+		ctx = c.getContext("2d");
+	c.width = $('.box').width();
+	c.height = $('.box').height();
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = '#222';
+	$('.color>div').click(function(){
+		ctx.strokeStyle = $(this).attr('class');
+	});
+	$('.submenu>div').click(function(){
+		ctx.lineWidth = $(this).attr('data');
+		$(this).parent().parent().removeClass('small medium big').addClass($(this).attr('class'));
+	});
+	$('.brushsize').click(function() {
+		$('.submenu').toggleClass('active');
+		$('.menufilter').toggle();
+	});
+	$('.menufilter').click(function() {
+		$('.brushsize').click();
+	});
+	$('.box canvas').on('mousedown', function(e){
+		if (e.layerX != undefined) {
+			var dx = e.layerX,
+				dy = e.layerY;
+		} else if (e.offsetX != undefined) {
+			var dx = e.offsetX,
+				dy = e.offsetY;
+		}
+		ctx.beginPath();
+		ctx.moveTo(dx, dy);
+		$('.box canvas').on('mousemove', function(e){
+			if (e.layerX != undefined) {
+				var dx = e.layerX,
+					dy = e.layerY;
+			} else if (e.offsetX != undefined) {
+				var dx = e.offsetX,
+					dy = e.offsetY;
+			}
+			ctx.lineTo(dx, dy);
+			ctx.stroke();
+		});
+	});
+	$('.box canvas').on('mouseup', function(){
+		$(this).off('mousemove');
+		ctx.closePath();
+	});
+});
+</script>
+</body>
+</html>
