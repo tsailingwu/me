@@ -11,7 +11,6 @@
 	.color {
 		position: absolute;
 		top: -50px;
-		left: 30%;
 		z-index: 3;
 	}
 	.color>div {
@@ -40,10 +39,16 @@
 	.purple {
 		background-color: purple;
 	}
+	.black {
+		background-color: black;
+	}
+	.white {
+		background-color: white;
+	}
 	.brushsize {
 		position: absolute;
 		top: -50px;
-		left: 60%;
+		left: 360px;
 		width: 100px;
 		height: 24px;
 		background-color: #fefefe;
@@ -67,14 +72,23 @@
 		top: 9px;
 		height: 5px;
 	}
-	.triangle {
+	.triangle,
+	.triangle::before {
 		position: relative;
 		top: 7px;
 		left: 80px;
 		width: 0;
 		height: 0;
-		border: 8px solid #222;
-		border-color: Turquoise #fefefe #fefefe #fefefe;
+		border-top: 8px solid Turquoise;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+	}
+	.triangle::before {
+		content: '';
+		position: absolute;
+		top: -9px;
+		left: -8px;
+		border-top: 8px solid #fefefe;
 	}
 	.submenu {
 		display: none;
@@ -129,7 +143,7 @@
 		width: 70%;
 		height: 70%;
 		border: 5px solid Turquoise;
-		background-color: #fefefe;
+		background-color: white;
 	}
 </style>
 </head>
@@ -152,6 +166,8 @@
 		<div class="blue"></div>
 		<div class="indigo"></div>
 		<div class="purple"></div>
+		<div class="black"></div>
+		<div class="white" data="15"></div>
 	</div>
 	<canvas></canvas>
 </div>
@@ -159,13 +175,22 @@
 <script>
 $(function() {
 	var c = $('.box canvas')[0],
-		ctx = c.getContext("2d");
+		ctx = c.getContext("2d"),
+		clw = 0;
+
 	c.width = $('.box').width();
 	c.height = $('.box').height();
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = '#222';
 	$('.color>div').click(function(){
+		ctx.globalCompositeOperation="source-over";
+		// 套用前次筆刷大小
 		ctx.strokeStyle = $(this).attr('class');
+	});
+	$('.white').click(function(){
+		ctx.globalCompositeOperation="destination-out";
+		// clw = $(this).attr('data'); 紀錄先前筆刷大小
+		ctx.lineWidth = $(this).attr('data');
 	});
 	$('.submenu>div').click(function(){
 		ctx.lineWidth = $(this).attr('data');
