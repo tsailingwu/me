@@ -1,12 +1,17 @@
-// $(document).ready(function(){
-//    $('.scrollbar-macosx').scrollbar();
-// });
 function anchor(i) {
 	$('html, body').animate({
 		scrollTop: $(i).offset().top
 	}, 600);
+	$('.menufilter').trigger('click');
 };
 $(function() {
+	// var imgName = ;
+	$('.item .photo').each(function() {
+		$(this).css({
+			'background': 'url(images/'+ $(this).parents('.item').attr('data-img') +'.jpg) no-repeat 50% 0',
+			'background-size': 'cover'
+		});
+	});
 	function detectWindow() {
 		var ww = $('.wrapper').width(),
 			wh = $(window).height();

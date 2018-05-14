@@ -316,21 +316,6 @@ nav a:hover>span {
 	width: 110%;
 	margin-left: -5%;
 }
-.item:first-child .photo {
-	background: url(../images/001.jpg) no-repeat 50% 50%/cover;
-}
-.item:nth-child(2) .photo {
-	background: url(../images/002.jpg) no-repeat 50% 50%/cover;
-}
-.item:nth-child(3) .photo {
-	background: url(../images/003.jpg) no-repeat 50% 0%/cover;
-}
-.item:nth-child(4) .photo {
-	background: url(../images/004.jpg) no-repeat 50% 0%/cover;
-}
-.item:last-child .photo {
-	background: url(../images/005.jpg) no-repeat 50% 0%/cover;
-}
 /* contact */
 .contact {
 	padding: 80px 0 160px;
@@ -384,21 +369,12 @@ footer a {
 footer a:hover {
 	color: #a4cdd1;
 }
-@media screen and (min-width: 1024px) {
-	.work .item:nth-child(4) {
-		margin-left: 13.25%;
-		margin-right: 6.75%;
-	}
-	.work .item:last-child {
-		margin-left: 6.75%;
-	}
-}
 @media screen and (max-width: 1366px) {
 	.content {
 		width: 90%;
 	}
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
 	.item {
 		width: 46.25%;
 	}
@@ -408,6 +384,15 @@ footer a:hover {
 	.item:last-child {
 		margin: 10px 26.875%;
 	}
+	/*
+	.work .item:nth-child(4) {
+		margin-left: 13.25%;
+		margin-right: 6.75%;
+	}
+	.work .item:last-child {
+		margin-left: 6.75%;
+	}
+	*/
 }
 @media screen and (max-width: 799px) {
 	.skill .content {
