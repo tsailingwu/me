@@ -68,12 +68,20 @@ a:hover {
 	color: #8b8788;
 	transition: color .3s;
 }
+.w_title span {
+	font-family: 'cwTeXYen', sans-serif;
+	font-size: 22px;
+	line-height: 22px;
+}
 .c_title {
 	display: inline-block;
 	text-align: left;
 	font: 28px/34px 'Quicksand', sans-serif;
 	letter-spacing: 1px;
 	word-break: break-all;
+}
+.c_title span {
+	font-family: 'cwTeXYen', sans-serif;
 }
 .content {
 	width: 70%;
@@ -95,7 +103,10 @@ a:hover {
 	width: 30%;
 	margin: 25px 1.25%;
 }
-.item:first-child {
+/*.item:first-child {
+	margin-left: 2.5%;
+}*/
+.item:nth-child(3n+1) {
 	margin-left: 2.5%;
 }
 /* nav */
@@ -324,9 +335,6 @@ nav a:hover>span {
 .c_title h2 {
 	margin: 3px 0;
 }
-.c_title span {
-	font-family: 'cwTeXYen', sans-serif;
-}
 .c_title a {
 	display: inline-block;
 	color: #8b8788;
@@ -378,6 +386,9 @@ footer a:hover {
 	.item {
 		width: 46.25%;
 	}
+	.item:nth-child(3n+1) {
+		margin-left: 1.25%;
+	}
 	.item:nth-child(2n+1) {
 		margin-left: 2.5%;
 	}
@@ -407,6 +418,7 @@ footer a:hover {
 		width: 95%;
 		margin: 10px 2.5%;
 	}
+	.item:nth-child(3n+1),
 	.item:last-child {
 		margin: 10px 0 10px 2.5%;
 	}
