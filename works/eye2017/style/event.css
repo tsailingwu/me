@@ -1,0 +1,863 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* config */
+body {
+	overflow-x: hidden;
+}
+.body::after {
+	content:
+		url(../images/event_canvas/model.png)
+		url(../images/event_canvas/step01/hair02.png)
+		url(../images/event_canvas/step01/eye_0.png)
+		url(../images/event_canvas/step01/lip_a.png)
+		url(../images/event_canvas/step02/top06.png)
+		url(../images/event_canvas/step02/acc12.png)
+		url(../images/event_canvas/step02/box04.png)
+		url(../images/event_canvas/gif/eye_a/a1.png)
+		url(../images/event_canvas/gif/eye_a/a2.png)
+		url(../images/event_canvas/gif/eye_a/b1.png)
+		url(../images/event_canvas/gif/eye_a/b2.png)
+		url(../images/event_canvas/gif/eye_a/c1.png)
+		url(../images/event_canvas/gif/eye_a/c2.png)
+		url(../images/event_canvas/gif/eye_b/a1.png)
+		url(../images/event_canvas/gif/eye_b/a2.png)
+		url(../images/event_canvas/gif/eye_b/b1.png)
+		url(../images/event_canvas/gif/eye_b/b2.png)
+		url(../images/event_canvas/gif/eye_b/c1.png)
+		url(../images/event_canvas/gif/eye_b/c2.png)
+		url(../images/event_canvas/gif/eye_c/a1.png)
+		url(../images/event_canvas/gif/eye_c/a2.png)
+		url(../images/event_canvas/gif/eye_c/b1.png)
+		url(../images/event_canvas/gif/eye_c/b2.png)
+		url(../images/event_canvas/gif/eye_c/c1.png)
+		url(../images/event_canvas/gif/eye_c/c2.png)
+		url(../images/event_canvas/step02/acc06.png);
+	position: absolute;
+	width: 0;
+	height: 0;
+	z-index: -10;
+}
+img {
+	width: 100%;
+	vertical-align: middle;
+}
+.wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 640px;
+	min-height: 100%;
+	margin: 0 auto;
+	font-family: 'Microsoft JhengHei', sans-serif;
+}
+.wrapper::before {
+	content: '';
+	display: block;
+	position: fixed;
+	left: 1px;
+	width: 100%;
+	max-width: 1920px;
+	height: 1080px;
+	background: url(../images/pc_bg.jpg) no-repeat 50% 50%;
+	background-size: cover;
+	z-index: -1;
+}
+/* step00 */
+.entrance {
+	position: relative;
+	height: 970px;
+	background: url(../images/sec02.jpg) no-repeat 50% 50%;
+	background-size: contain;
+}
+.entrance .bg div {
+	background-size: contain;
+}
+.entrance .logo,
+.loading .logo {
+	width: 95%;
+	height: 133px;
+	padding-top: 64px;
+	margin-left: 2.5%;
+	background: url(../images/logo-hand.png) no-repeat 50% 100%;
+	background-size: contain;
+}
+.loading .logo {
+	margin-top: 0;
+}
+.entrance .gem_top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 73px;
+	background: url(../images/gem_top.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.entrance .adorn {
+	position: absolute;
+	top: 215px;
+	width: 100%;
+	height: 488px;
+	background: url(../images/sec02bg_adorn.png) no-repeat 50% 50%;
+}
+.entrance .gem_left {
+	position: absolute;
+	top: 620px;
+	left: 0;
+	width: 39px;
+	height: 68px;
+	background: url(../images/gem_left.png) no-repeat 50% 50%;
+}
+.entrance .gem_right {
+	position: absolute;
+	top: 375px;
+	right: 0;
+	width: 93px;
+	height: 217px;
+	background: url(../images/gem_right.png) no-repeat 50% 50%;
+}
+.entrance .model {
+	position: absolute;
+	top: 170px;
+	left: 50%;
+	width: 409px;
+	height: 545px;
+	margin-left: -204.5px;
+	background: url(../images/girl.png) no-repeat 50% 50%;
+}
+.entrance .content .title {
+	position: absolute;
+	bottom: 105px;
+	width: 98.4375%;
+	height: 330px;
+	margin-left: 0.78125%;
+	background: url(../images/sec02_title.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.btn_content {
+	padding-top: 25px;
+}
+.step00 .btn_content {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	padding: 0;
+}
+.btn_content .btn {
+	float: left;
+	width: 47.5%;
+	height: 61px;
+	margin-left: 2%;
+	cursor: pointer;
+}
+.entrance .btn_content .btn+.btn {
+	margin-left: 1%;
+}
+.entrance .btn_content .start {
+	background: url(../images/start_btn.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.entrance .btn_content .rule {
+	background: url(../images/sec02_rule_btn.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+/* rule */
+.rule_mask {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 5;
+}
+section.rule {
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	max-width: 640px;
+	height: 970px;
+	background: url(../images/rule_bg.jpg) no-repeat 50% 50%;
+	background-size: contain;
+	z-index: 6;
+}
+.rule .close {
+	position: absolute;
+	top: 60px;
+	right: 9%;
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	cursor: pointer;
+}
+.rule .close div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 2px;
+	margin-top: -1px;
+	margin-left: -50%;
+	border-radius: 1px;
+	background-color: #cd6679;
+}
+.rule .close .top {
+	transform: rotate(45deg);
+}
+.rule .close .bot {
+	transform: rotate(-45deg);
+}
+.rule .scroll_content {
+	position: absolute;
+	bottom: 80px;
+	width: 85%;
+    height: 560px;
+    margin-left: 7.5%;
+    overflow-y: scroll;
+}
+.rule .scroll_content::-webkit-scrollbar-thumb {
+	width: 54px;
+	height: 73px;
+	background: url(../images/scroll_touch.png) no-repeat 50% 0%;
+}
+.rule .scroll_content::-webkit-scrollbar {
+	width: 54px;
+	background: url(../images/scroll_bar.png) repeat-y 50% 50%;
+}
+.rule .scroll_content .text {
+	height: 6250px;
+	background: url(../images/rule_txt.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.rule .arrow_down {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 8.125%;
+	height: 52px;
+	margin-left: -4.0625%;
+	padding: 4px;
+	cursor: pointer;
+	background: url(../images/00_carousel_arrow_l.png) no-repeat 50% 50%;
+	background-size: contain;
+	transform: rotate(-90deg);
+	animation: down_jump 1.5s alternate infinite;
+}
+@keyframes down_jump {
+	from {
+		bottom: 90px;
+	}
+	to {
+		bottom: 140px;
+	}
+}
+.step01 {
+	display: none;
+}
+.previewArea {
+	position: relative;
+	height: 554px;
+	overflow: hidden;
+}
+.previewArea .text {
+	position: absolute;
+	left: 4.5%;
+	bottom: 15px;
+	width: 82.34%;
+	max-width: 527px;
+	height: 206px;
+	opacity: 0;
+	transition: opacity .3s;
+}
+.previewArea .text.active {
+	opacity: 1;
+}
+.previewArea .text.p3 {
+	background: url(../images/event/step01/product03_txt.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.previewArea .text.p2_1 {
+	background: url(../images/event/step02/product02_txt_red.png) no-repeat 50% 80%;
+	background-size: contain;
+}
+.previewArea .text.p2_2 {
+	background: url(../images/event/step02/product02_txt_pink.png) no-repeat 50% 80%;
+	background-size: contain;
+}
+.previewArea .text.p2_3 {
+	background: url(../images/event/step02/product02_txt_orange.png) no-repeat 50% 80%;
+	background-size: contain;
+}
+.previewArea .text.p2_4 {
+	background: url(../images/event/step02/product02_txt_purple.png) no-repeat 50% 80%;
+	background-size: contain;
+}
+.previewArea .text.p1 {
+	background: url(../images/event/step02/product01_txt.png) no-repeat 50% 70%;
+	background-size: contain;
+}
+.canvas {
+	position: absolute;
+	top: -16.40625vw;
+	left: -8.203125vw;
+	width: 116.40625vw;
+	height: 116.40625vw;
+	max-width: 745px;
+	max-height: 745px;
+}
+.canvas canvas {
+	width: 100%;
+}
+.selectArea {
+	position: relative;
+	height: 440px;
+	margin-top: -24px;
+	overflow: hidden;
+}
+.select01,
+.select02 {
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+}
+.select01.active,
+.select02.active {
+	visibility: visible;
+}
+/* step01 */
+.step01 {
+	height: 970px;
+	background: url(../images/sec02.jpg) no-repeat 50% 50%;
+	background-size: contain;
+}
+.menu {
+	height: 97px;
+	padding: 40px 0 20px;
+}
+.step01 .menu .star {
+	float: left;
+	width: 19.5%;
+	height: 100%;
+}
+.select01 .menu>div:first-child {
+	margin-left: 0.5%;
+	background: url(../images/event/step01/star_left.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select01 .menu>div:last-child {
+	background: url(../images/event/step01/star_right.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.menu .sort {
+	float: left;
+	position: relative;
+	width: 15%;
+	height: 100%;
+	margin: 0 2.5%;
+	background: url(../images/event/select.png) no-repeat 50% 50%;
+	background-size: contain;
+	cursor: pointer;
+}
+.menu .sort.active {
+	background: url(../images/event/select_active.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.menu .sort::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.select01 .menu .sort:nth-child(2)::before {
+	background: url(../images/event/step01/menu_hair.png) no-repeat 50% 50%;
+}
+.select01 .menu .sort:nth-child(3)::before {
+	background: url(../images/event/step01/menu_eye.png) no-repeat 50% 50%;
+}
+.select01 .menu .sort:nth-child(4)::before {
+	background: url(../images/event/step01/menu_lip.png) no-repeat 50% 50%;
+}
+.select02 .menu .sort:nth-child(1)::before {
+	background: url(../images/event/step02/menu_color.png) no-repeat 50% 50%;
+}
+.select02 .menu .sort:nth-child(2)::before {
+	background: url(../images/event/step02/menu_eyeliner.png) no-repeat 50% 50%;
+}
+.select02 .menu .sort:nth-child(3)::before {
+	background: url(../images/event/step02/menu_top.png) no-repeat 50% 50%;
+}
+.select02 .menu .sort:nth-child(4)::before {
+	background: url(../images/event/step02/menu_acc.png) no-repeat 50% 50%;
+}
+.select02 .menu .sort:nth-child(5)::before {
+	background: url(../images/event/step02/menu_item.png) no-repeat 50% 50%;
+}
+.menu::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.carousel {
+	position: relative;
+	width: 90.9375%;
+	height: 19vw;
+	max-height: 121px;
+	margin-left: 4.5%;
+	padding-bottom: 20px;
+}
+.carousel>div {
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.carousel>div.active {
+	display: block;
+}
+.carousel_item>div {
+	float: left;
+	width: 33%;
+	cursor: pointer;
+}
+.carousel_item>div:first-child {
+	margin-left: 0.5%;
+}
+.carousel_item2>div{
+	float: left;
+	width: 25%;
+	cursor: pointer;
+}
+.item {
+	position: relative;
+	z-index: 1;
+}
+.item.active {
+	height: 100%;
+}
+.item.active::after,
+#hair .item.active::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	max-height: 121px;
+}
+.select02 #color .item.active::after,
+.select02 #eyeliner .item.active::after {
+	z-index: -1;
+}
+.select02 .item.none.active::after,
+.select02 #bg .item.none.active::after {
+	background-image: none;
+}
+.select01 .item.active::after {
+	background: url(../images/event/step01/select.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select01 #hair .item.active::after {
+	background: url(../images/event/step01/select_hair.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 .item.active::after {
+	background: url(../images/event/step02/select.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 #color .item.active::after {
+	background: url(../images/event/step02/box_select_14.png) no-repeat 50% 0;
+	background-size: contain;
+}
+.select02 #color .item.active:nth-child(2)::after,
+.select02 #color .item.active:nth-child(3)::after {
+	background: url(../images/event/step02/box_select_23.png) no-repeat 50% 0;
+	background-size: contain;
+}
+.select02 #eyeliner .item.active::after {
+	background: url(../images/event/step02/pen_select.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 #bg .item.active::after {
+	background: url(../images/event/step02/item_select.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 #bg .item.b.active::after {
+	background: url(../images/event/step02/item_select02.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 #bg .item.c.active::after {
+	background: url(../images/event/step02/item_select03.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.select02 #bg .item.d.active::after {
+	background: url(../images/event/step02/item_select04.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+.carousel>div::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.carousel_scroll {
+	position: absolute;
+	width: 9999px;
+}
+.carousel_scroll>div {
+	float: left;
+	cursor: pointer;
+}
+.carousel_arrow_l,
+.carousel_arrow_r {
+	position: absolute;
+	top: 50%;
+	width: 6.25%;
+	margin-top: -30px;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 2;
+}
+.carousel_arrow_l {
+	left: -5%;
+}
+.carousel_arrow_r {
+	right: -5%;
+	transform: rotate(180deg);
+}
+.btn_content .back {
+	background: url(../images/event/back_btn.png) no-repeat 50% 50%;
+}
+.btn_content .next {
+	background: url(../images/event/next_btn.png) no-repeat 50% 50%;
+}
+.select02 .btn_content .next {
+	background: url(../images/event/done.png) no-repeat 50% 50%;
+	background-size: contain;
+}
+/* loading */
+.loading {
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	max-width: 640px;
+	height: 151vw;
+	max-height: 970px;
+	background: url(../images/sec02.jpg) no-repeat 50% 50%;
+	background-size: contain;
+	z-index: 3;
+}
+.loading div:last-child {
+	position: absolute;
+	top: 50%;
+	width: 20.9%;
+	margin-top: -120px;
+	margin-left: 39.55%;
+}
+.loading span {
+	display: inline-block;
+	width: 100%;
+	font-size: 40px;
+	text-align: center;
+	color: #d1597f;
+}
+.final {
+	height: 970px;
+	background: url(../images/sec02.jpg) no-repeat 50% 50%;
+	background-size: contain;
+}
+.final .previewArea {
+	height: 640px;
+}
+.final .previewArea img {
+	width: 100%;
+}
+.final .content>.text {
+	width: 90.4%;
+	margin-left: 4.8%;
+	padding-top: 30px;
+}
+.final form {
+	width: 62.5%;
+	margin-top: 20px;
+	margin-left: 18.75%;
+}
+.final form>* {
+	float: left;
+}
+.final form input {
+	display: none;
+}
+.final form label {
+	position: relative;
+	width: 100%;
+}
+.final form label::before {
+	content: '';
+	float: left;
+	width: 33px;
+	height: 33px;
+	margin-right: 3.5%;
+	border: 1px solid #000;
+	background-color: #fff;
+}
+.final form label::before,
+.final label p,
+.final label span{
+	float: left;
+	display: block;
+	line-height: 35px;
+}
+.final form label::after {
+	content: '';
+	float: left;
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 12px;
+	border: 4px solid #000;
+	border-top: none;
+	border-right: none;
+	transition: transform .4s cubic-bezier(.45, 1.8, .5, .75);
+	transform: rotate(-45deg) scale(0, 0);
+}
+.final form input:checked~label::after {
+	transform: rotate(-45deg) scale(1, 1);
+}
+.final label p.text {
+	width: 64.5%;
+}
+.final label p.rule {
+	width: 23%;
+	cursor: pointer;
+}
+.final form::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.final .btn {
+	width: 55.4%;
+	margin: 25px auto 0;
+	cursor: pointer;
+}
+/* prompt */
+.prompt {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .8) url(../images/prompt.jpg) no-repeat 50% 50%;
+	background-size: contain;
+	z-index: 1;
+}
+.prompt.active {
+	display: block;
+}
+@media screen and (max-width: 639px) {
+	.wrapper::before {
+		display: none;
+	}
+	.wrapper::after {
+		height: 11.4vw;
+	}
+	.entrance,
+	.step01,
+	.loading {
+		height: 151.5vw;
+	}
+	.entrance .logo,
+	.loading .logo {
+		height: 20.7vw;
+		padding-top: 10vw;
+	}
+	.entrance .adorn {
+		top: 33.5vw;
+		height: 76.25vw;
+	}
+	.entrance .gem_left {
+		top: 96.8vw;
+		width: 6%;
+		height: 10.6vw;
+	}
+	.entrance .gem_right {
+		top: 58.5vw;
+		width: 14.53%;
+		height: 33.9vw;
+	}
+	.entrance .model {
+		top: 26.5vw;
+		width: 63.9%;
+		height: 85vw;
+		margin-left: -31.95%;
+	}
+	.entrance .content .title {
+		bottom: 16.4vw;
+		height: 51.5vw;
+	}
+	.entrance .btn_content {
+		bottom: 5vw;
+	}
+	.btn_content .btn {
+		height: 9.5vw;
+		background-size: contain;
+	}
+	section.rule {
+		height: 151.5vw;
+	}
+	.rule .close {
+		top: 8vw;
+		right: 6%;
+		width: 40px;
+		height: 40px;
+	}
+	.rule .scroll_content {
+		bottom: 12.5vw;
+	    height: 87.5vw;
+	}
+	.rule .scroll_content::-webkit-scrollbar-thumb {
+		width: 8.44vw;
+		height: 11.41vw;
+		background-size: contain;
+	}
+	.rule .scroll_content::-webkit-scrollbar {
+		width: 8.44vw;
+		background-size: contain;
+	}
+	.rule .scroll_content .text {
+		height: 976.56vw;
+	}
+	.rule .arrow_down {
+		height: 52px;
+		padding: 4px;
+	}
+	@keyframes down_jump {
+		from {
+			bottom: 14vw;
+		}
+		to {
+			bottom: 20vw;
+		}
+	}
+	.previewArea {
+		height: 86.56vw;
+	}
+	.previewArea .text {
+		bottom: 0;
+		max-width: 527px;
+		height: 32.19vw;
+	}
+	.selectArea {
+		height: 68.75vw;
+		margin-top: -1.5vw;
+	}
+	.menu {
+		height: 15.16vw;
+		padding: 7vw 0 3vw;
+	}
+	.carousel {
+		padding-bottom: 0;
+	}
+	.select01 .menu .sort::before,
+	.select02 .menu .sort::before {
+		width: 50%;
+		margin-left: 25%;
+	}
+	.select01 .menu .sort:nth-child(2)::before,
+	.select01 .menu .sort:nth-child(3)::before,
+	.select01 .menu .sort:nth-child(4)::before,
+	.select02 .menu .sort:nth-child(1)::before,
+	.select02 .menu .sort:nth-child(2)::before,
+	.select02 .menu .sort:nth-child(3)::before,
+	.select02 .menu .sort:nth-child(4)::before,
+	.select02 .menu .sort:nth-child(5)::before {
+		background-size: contain;
+	}
+	.carousel_arrow_l,
+	.carousel_arrow_r {
+		margin-top: -4.6vw;
+	}
+	.btn_content {
+		padding-top: 2vw;
+	}
+	.loading div:last-child {
+		margin-top: -18.75vw;
+	}
+	.loading span {
+		font-size: 6.25vw;
+	}
+	.final {
+		height: 151vw;
+	}
+	.final .previewArea {
+		height: 100vw;
+	}
+	.final .content>.text {
+		padding-top: 4.7vw;
+	}
+	.final form {
+		margin-top: 3vw;
+	}
+	.final form label::before {
+		width: 5vw;
+		height: 5vw;
+	}
+	.final form label::before,
+	.final form p {
+		line-height: 5.5vw;
+	}
+	.final form label::after {
+		top: 0.78vw;
+		left: 0.78vw;
+		width: 3vw;
+		height: 1.8vw;
+	}
+	.final .btn {
+		margin: 3vw auto 0;
+	}
+}

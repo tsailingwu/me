@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot?94579377');
+  src: url('font/fontello.eot?94579377#iefix') format('embedded-opentype'),
+       url('font/fontello.woff2?94579377') format('woff2'),
+       url('font/fontello.woff?94579377') format('woff'),
+       url('font/fontello.ttf?94579377') format('truetype'),
+       url('font/fontello.svg?94579377#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"] {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+	font-size: 15px;
+}
+[class^="icon-"]::before {
+	display: inline-block;
+	text-align: center;
+	vertical-align: baseline;
+	font: normal normal normal 14px/1em fontello;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-play::before {content:'\e800';}
+.icon-right::before {content:'\e801';}
+.icon-left::before {content:'\e802';}
+.icon-up::before {content:'\e803';}
+.icon-down::before {content:'\e804';}
+.icon-cancel::before {content:'\e805';}
+.icon-twitter::before {content:'\f099';}
+.icon-facebook::before {content:'\f09a';}
+.icon-play {
+	color: #fff;
+}

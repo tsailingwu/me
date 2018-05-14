@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="T-star,T-star 2017,T-star Taiwan">
+<!-- share link -->
+<meta name="description" property="og:description" itemprop="description" content="">
+<meta property="og:url" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" itemprop="name" content="">
+<meta property="og:image" itemprop="image" content="">
+<title>T-star</title>
+<!-- css -->
+<link rel="stylesheet" href="style/main.css">
+<!-- js -->
+<script src="script/jquery-3.2.1.min.js"></script>
+<script src="script/main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		<div class="header_top">
+			<div class="logo"></div>
+			<div class="ht_right">
+				<div class="title font30">戰情室</div>
+				<div class="counter_people">
+					<p class="font18">即時線上人數</p>
+					<p class="font30"><span class="number"></span><i class="icon"><span>?</span></i></p>
+				</div>
+				<div class="counter_people_detail">
+					<div class="counter_entered">
+						<p>進入賣場人數</p>
+						<p class="number font18"></p>
+					</div>
+					<span>+</span>
+					<div class="counter_queue">
+						<p>排隊中人數</p>
+						<p class="number font18"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="marquee">
+			<div class="marquee_content">
+				<div class="marquee_width"></div>
+			</div>
+		</div>
+	</header>
+	<div class="dashboard">
+		<div class="content_top">
+			<div class="item city pc">
+				<div class="item_title font18">地區分布</div>
+				<div>
+					<canvas id="city"></canvas>
+				</div>
+			</div>
+			<div class="item order">
+				<div class="counter_order font110">
+					<div>0</div>
+					<div>0</div>
+					<div>0</div>
+					<span>,</span>
+					<div>0</div>
+					<div>0</div>
+					<div>0</div>
+				</div>
+				<div>
+					<canvas id="order_line"></canvas>
+				</div>
+			</div>
+			<div class="item city mobile">
+				<div class="item_title font18">地區分布</div>
+				<div>
+					<canvas id="city_mobile"></canvas>
+				</div>
+			</div>
+			<div class="item horoscope">
+				<div class="item_title font18">星座分布</div>
+				<div>
+					<canvas id="horoscope"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="content_bot">
+			<div class="content_left">
+				<div class="item sex">
+					<div class="item_title font18">性別分布</div>
+					<div>
+						<canvas id="sex"></canvas>
+					</div>
+				</div>
+				<div class="item age">
+					<div class="item_title font18">年齡分布</div>
+					<div>
+						<canvas id="age"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="content_mid">
+				<div class="item device">
+					<div class="item_title font18">使用裝置</div>
+					<div>
+						<canvas id="device"></canvas>
+					</div>
+				</div>
+				<div class="item aq_np">
+					<div class="item_title font18">現場排隊/保證入場</div>
+					<div>
+						<canvas id="aq_np"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="content_right">
+				<div class="item np_company">
+					<div class="item_title font18">攜碼業者分布</div>
+					<div>
+						<canvas id="np_company"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>© 2017 TSTAR, All Rights Reserved</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="MJ,MJ 2017,MJ Taiwan,MJ 愛線狂防暈眼線筆">
+<!-- share link -->
+<meta name="description" content="MJ 愛線狂防暈眼線筆">
+<meta property="og:type" content="MJ">
+<meta property="og:title" content="MJ 愛線狂防暈眼線筆">
+<meta property="og:description" content="MJ 愛線狂防暈眼線筆">
+<title>MJ 愛線狂防暈眼線筆</title>
+<!-- css -->
+<link rel="stylesheet" href="style/event.css">
+<!-- js -->
+<script src="script/jquery-3.2.1.min.js"></script>
+<script src="script/b64.js"></script>
+<script src="script/LZWEncoder.js"></script>
+<script src="script/NeuQuant.js"></script>
+<script src="script/GIFEncoder.js"></script>
+<script src="script/event.js"></script>
+<script>
+$(function(argument) {
+	var mobile = $(window).width() < 640;
+		mobile ? HorizontalView() : '';
+
+	function HorizontalView() {
+		var	Horizontal = $(window).width() > $(window).height();
+
+		if (Horizontal) {
+			$('body').css('background-color', 'red')
+		} else {
+			$('body').css('background-color', '')
+		}
+	};
+	$(window).on('resize', function() {
+		mobile ? HorizontalView() : '';
+	});
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="step00">
+		<section class="entrance">
+			<div class="bg">
+				<div class="gem_top"></div>
+				<div class="logo"></div>
+				<div class="adorn"></div>
+				<div class="gem_left"></div>
+				<div class="gem_right"></div>
+				<div class="model"></div>
+			</div>
+			<div class="content">
+				<div class="title"></div>
+				<div class="text"></div>
+				<div class="btn_content">
+					<div class="start btn"></div>
+					<div class="rule btn"></div>
+				</div>
+			</div>
+		</section>
+		<div class="rule_mask"></div>
+		<section class="rule">
+			<div class="close">
+				<div class="top"></div>
+				<div class="bot"></div>
+			</div>
+			<div class="scroll_content">
+				<div class="text"></div>
+			</div>
+			<div class="arrow_down"></div>
+		</section>
+	</div>
+	<div class="step01">
+		<div class="previewArea">
+			<div class="canvas">
+				<canvas id="canvas"></canvas>
+				<canvas id="canvas2"></canvas>
+			</div>
+			<div class="text p3"></div>
+			<div class="text p2_1"></div>
+			<div class="text p2_2"></div>
+			<div class="text p2_3"></div>
+			<div class="text p2_4"></div>
+			<div class="text p1"></div>
+		</div>
+		<div class="selectArea">
+			<img src="images/event/bar_white.png">
+			<div class="select01 active">
+				<div class="menu">
+					<div class="star"></div>
+					<div class="sort active"></div>
+					<div class="sort" data-sort="3"></div>
+					<div class="sort"></div>
+					<div class="star"></div>
+				</div>
+				<div class="carousel">
+					<div id="hair" class="carousel_config active">
+						<div class="carousel_content">
+							<div class="carousel_scroll">
+								<div class="item" data-value="1"><img src="images/event/step01/hair01.png"></div>
+								<div class="item" data-value="2"><img src="images/event/step01/hair02.png"></div>
+								<div class="item" data-value="3"><img src="images/event/step01/hair03.png"></div>
+								<div class="item" data-value="4"><img src="images/event/step01/hair04.png"></div>
+								<div class="item" data-value="5"><img src="images/event/step01/hair05.png"></div>
+								<div class="item" data-value="6"><img src="images/event/step01/hair06.png"></div>
+								<div class="item" data-value="7"><img src="images/event/step01/hair07.png"></div>
+								<div class="item" data-value="8"><img src="images/event/step01/hair08.png"></div>
+							</div>
+							<div class="carousel_arrow_l"><img src="images/event/arrow_left.png"></div>
+							<div class="carousel_arrow_r"><img src="images/event/arrow_left.png"></div>
+						</div>
+					</div>
+					<div id="eye" class="carousel_config carousel_item">
+						<div class="item" data-text="p3" data-value="a"><img src="images/event/step01/eye_a.png"></div>
+						<div class="item" data-text="p3" data-value="b"><img src="images/event/step01/eye_b.png"></div>
+						<div class="item" data-text="p3" data-value="c"><img src="images/event/step01/eye_c.png"></div>
+					</div>
+					<div id="lip" class="carousel_config carousel_item">
+						<div class="item active" data-value="a"><img src="images/event/step01/lip_a.png"></div>
+						<div class="item" data-value="b"><img src="images/event/step01/lip_b.png"></div>
+						<div class="item" data-value="c"><img src="images/event/step01/lip_c.png"></div>
+					</div>
+				</div>
+				<img src="images/event/bar_bot.png">
+				<div class="btn_content">
+					<div class="back btn"></div>
+					<div class="next btn"></div>
+				</div>
+			</div>
+			<div class="select02">
+				<div class="menu">
+					<div class="sort active" data-sort="2"></div>
+					<div class="sort" data-sort="1"></div>
+					<div class="sort"></div>
+					<div class="sort"></div>
+					<div class="sort"></div>
+				</div>
+				<div class="carousel">
+					<div id="color" class="carousel_config carousel_item2 active">
+						<div class="item" data-text="p2_1" data-value="1"><img src="images/event/step02/box01.png"></div>
+						<div class="item" data-text="p2_2" data-value="2"><img src="images/event/step02/box02.png"></div>
+						<div class="item" data-text="p2_3" data-value="3"><img src="images/event/step02/box03.png"></div>
+						<div class="item active" data-text="p2_4" data-value="4"><img src="images/event/step02/box04.png"></div>
+					</div>
+					<div id="eyeliner" class="carousel_config carousel_item">
+						<div class="item active" data-text="p1" data-value="a"><img src="images/event/step02/pen_black.png"></div>
+						<div class="item" data-text="p1" data-value="b"><img src="images/event/step02/pen_brown.png"></div>
+						<div class="item" data-text="p1" data-value="c"><img src="images/event/step02/pen_red.png"></div>
+					</div>
+					<div id="top" class="carousel_config">
+						<div class="carousel_content">
+							<div class="carousel_scroll">
+								<div class="item" data-value="1"><img src="images/event/step02/top01.png"></div>
+								<div class="item" data-value="2"><img src="images/event/step02/top02.png"></div>
+								<div class="item" data-value="3"><img src="images/event/step02/top03.png"></div>
+								<div class="item" data-value="4"><img src="images/event/step02/top04.png"></div>
+								<div class="item" data-value="5"><img src="images/event/step02/top05.png"></div>
+								<div class="item active" data-value="6"><img src="images/event/step02/top06.png"></div>
+								<div class="item" data-value="7"><img src="images/event/step02/top07.png"></div>
+							</div>
+							<div class="carousel_arrow_l"><img src="images/event/arrow_left.png"></div>
+							<div class="carousel_arrow_r"><img src="images/event/arrow_left.png"></div>
+						</div>
+					</div>
+					<div id="acc" class="carousel_config">
+						<div class="carousel_content">
+							<div class="carousel_scroll">
+								<div class="item" data-group="0" data-value="01"><img src="images/event/step02/acc01.png"></div>
+								<div class="item" data-group="0" data-value="02"><img src="images/event/step02/acc02.png"></div>
+								<div class="item" data-group="0" data-value="03"><img src="images/event/step02/acc03.png"></div>
+								<div class="item" data-group="1" data-value="04"><img src="images/event/step02/acc04.png"></div>
+								<div class="item" data-group="1" data-value="05"><img src="images/event/step02/acc05.png"></div>
+								<div class="item" data-group="2" data-value="06"><img src="images/event/step02/acc06.png"></div>
+								<div class="item" data-group="2" data-value="07"><img src="images/event/step02/acc07.png"></div>
+								<div class="item" data-group="3" data-value="08"><img src="images/event/step02/acc08.png"></div>
+								<div class="item" data-group="3" data-value="09"><img src="images/event/step02/acc09.png"></div>
+								<div class="item" data-group="3" data-value="10"><img src="images/event/step02/acc10.png"></div>
+								<div class="item" data-group="3" data-value="11"><img src="images/event/step02/acc11.png"></div>
+								<div class="item" data-group="3" data-value="12"><img src="images/event/step02/acc12.png"></div>
+								<div class="item" data-group="3" data-value="13"><img src="images/event/step02/acc13.png"></div>
+								<div class="item none" data-group="none"><img src="images/event/step02/none.png"></div>
+							</div>
+							<div class="carousel_arrow_l"><img src="images/event/arrow_left.png"></div>
+							<div class="carousel_arrow_r"><img src="images/event/arrow_left.png"></div>
+						</div>
+					</div>
+					<div id="bg" class="carousel_config">
+						<div class="carousel_content">
+							<div class="carousel_scroll">
+								<!-- a -->
+								<div class="item" data-group="0" data-value="1"><img src="images/event/step02/item01.png"></div>
+								<div class="item" data-group="0" data-value="2"><img src="images/event/step02/item02.png"></div>
+								<div class="item" data-group="0" data-value="3"><img src="images/event/step02/item03.png"></div>
+								<div class="item" data-group="0" data-value="4"><img src="images/event/step02/item04.png"></div>
+								<div class="item" data-group="0" data-value="5"><img src="images/event/step02/item05.png"></div>
+								<div class="item" data-group="0" data-value="6"><img src="images/event/step02/item06.png"></div>
+								<!-- b -->
+								<div class="item b" data-group="1" data-value="1"><img src="images/event/step02/item11.png"></div>
+								<div class="item b" data-group="1" data-value="2"><img src="images/event/step02/item12.png"></div>
+								<div class="item b" data-group="1" data-value="3"><img src="images/event/step02/item13.png"></div>
+								<div class="item b" data-group="1" data-value="4"><img src="images/event/step02/item14.png"></div>
+								<div class="item b" data-group="1" data-value="5"><img src="images/event/step02/item15.png"></div>
+								<!-- c -->
+								<div class="item c" data-group="2" data-value="1"><img src="images/event/step02/item21.png"></div>
+								<div class="item c" data-group="2" data-value="2"><img src="images/event/step02/item22.png"></div>
+								<div class="item c" data-group="2" data-value="3"><img src="images/event/step02/item23.png"></div>
+								<div class="item c" data-group="2" data-value="4"><img src="images/event/step02/item24.png"></div>
+								<div class="item c" data-group="2" data-value="5"><img src="images/event/step02/item25.png"></div>
+								<!-- d -->
+								<div class="item d" data-group="3" data-value="1"><img src="images/event/step02/item31.png"></div>
+								<div class="item d" data-group="3" data-value="2"><img src="images/event/step02/item32.png"></div>
+								<div class="item d" data-group="3" data-value="3"><img src="images/event/step02/item33.png"></div>
+								<div class="item d" data-group="3" data-value="4"><img src="images/event/step02/item34.png"></div>
+								<div class="item d" data-group="3" data-value="5"><img src="images/event/step02/item35.png"></div>
+								<div class="item d" data-group="3" data-value="6"><img src="images/event/step02/item36.png"></div>
+								<!-- none -->
+								<div class="item none" data-group="none"><img src="images/event/step02/none.png"></div>
+							</div>
+							<div class="carousel_arrow_l"><img src="images/event/arrow_left.png"></div>
+							<div class="carousel_arrow_r"><img src="images/event/arrow_left.png"></div>
+						</div>
+					</div>
+				</div>
+				<img src="images/event/bar_bot.png">
+				<div class="btn_content">
+					<div class="back btn"></div>
+					<div class="next btn"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="loading">
+		<div class="logo"></div>
+		<div>
+			<img src="images/loading.gif">
+			<span></span>
+		</div>
+	</div>
+</div>
+</body>
+</html>
