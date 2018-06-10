@@ -1,0 +1,11 @@
+header {
+    height: 60px;
+    padding: 0 2%;
+    border-bottom: 1px solid #000;
+    /* background-color: rgba(0, 0, 0, .8); */
+    box-sizing: border-box;
+}
+header .title {
+    font-size: 52px;
+    line-height: 60px;
+}

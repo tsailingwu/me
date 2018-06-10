@@ -1,0 +1,13 @@
+.Content>div>div {
+    float: left;
+    width: 50%;
+    margin-top: 20px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.Content>div,
+.Content::after {
+    content: '';
+    display: block;
+    clear: both;
+}

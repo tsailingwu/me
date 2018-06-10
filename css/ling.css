@@ -210,7 +210,11 @@ nav a:hover>span {
 	line-height: 100%;
 	letter-spacing: 5px;
 	animation: indexfont 6s alternate infinite linear;
-	z-index: 1;
+    z-index: 1;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
 }
 @keyframes indexfont {
 	from {
@@ -392,9 +396,9 @@ footer a:hover {
 	.item:nth-child(2n+1) {
 		margin-left: 2.5%;
 	}
-	.item:last-child {
+	/* .item:last-child {
 		margin: 10px 26.875%;
-	}
+	} */
 	/*
 	.work .item:nth-child(4) {
 		margin-left: 13.25%;
