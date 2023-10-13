@@ -1,0 +1,65 @@
+https://sqlzoo.net/wiki/SELECT_basics/zh
+https://sqlbolt.com/
+https://www.sqlteaching.com/
+
+char 與 varchar
+
+INTO TEMP
+    取欄位
+    SELECT TOP 0 * INTO #temp FROM TestTable //複製TestTable的結構至#temp
+    SELECT * FROM #temp
+    
+    複製並入新表
+    INSERT INTO TestTable SELECT * FROM #temp
+
+DISTINCT
+UNIQUE
+    // 有效寫法
+    SELECT DISTINCT name FROM employee;
+    SELECT COUNT(UNIQUE name) FROM employee;
+
+TRUNCATE TABLE(清空表內資料，欄位保留)
+
+UNION 將兩個查詢的結果集合並為一個表
+    SELECT stock_num, manu_code
+    FROM stock
+    WHERE unit_price<25
+    UNION [ALL]
+    SELECT stock_num, manu_code
+    FORM items
+    WHERE quantity=10
+
+// WHERE    
+LIKE(SQL SERVER)
+    col LIKE 'Smi%' AND col NOT LIKE 'R_x[a-z]'
+MATCHES(Informix)
+    col MATCHES 'Smi*' AND col NOT MATCHES 'R?x[a-z]'
+
+// 常用函數
+TRUNC
+    TRUNC(111.15, -1) => 110
+    TRUNC(2011-07-21 10:32:38.248109) => 2011-07-21
+
+ISNULL() = NVL('取代NULL的值', colName)
+    -- MS SQL Server
+    SELECT * FROM member WHERE education = ISNULL('Master Degree', education) AND gender = ISNULL('Male', gender);
+    -- Oracle
+    SELECT * FROM member WHERE education = NVL('Master Degree', education) AND gender = NVL('Male', gender);
+
+TRIM(SQL SERVER)
+    SELECT TRIM( '     test    ') AS Result; // 'test'
+    SELECT TRIM( '.,! ' FROM  '#     test    .') AS Result; // '#     test'
+
+decode(expr, search_value1, result1, [search_value2, result2, ...], default_value)
+    select decode(sign(100-90), -1, 100, 90) // 若 sign(100-90) 為 -1 則傳回 100，否則為預設值(90)
+    from dual;
+
+// 資料維護
+LOAD 匯入檔案
+    DELIMITER 子句指定用於分隔檔案中值的字元。
+    LOAD FROM 'customers.txt' DELIMITER '!' INTO customers;
+UNLOAD 匯出檔案
+    UNLOAD TO 'customers.csv' DELIMITER ';' SELECT * FROM customers;
+
+// 實務
+Example: WHERE unit != 'case' 並不包括unit為null之資料，如果要包括可改寫為WHERE unit != 'case' OR unit IS NULL

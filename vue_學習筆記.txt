@@ -1,0 +1,6 @@
+1. 建立專案
+	1. npm config set strict-ssl false
+	2. 確認CMD的Path有npm (https://ithelp.ithome.com.tw/articles/10028050)
+	3. 使用Vite建立Vue2專案(https://juejin.cn/post/7156168274529484830)
+
+npm i vuex@3
